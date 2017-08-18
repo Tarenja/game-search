@@ -1,0 +1,15 @@
+doctype html
+html
+	head
+	body
+		if user
+			h1 Welcome to the Homepage!
+		else
+			
+			form(action='/login' method='post')
+				input(type='text', placeholder='username', name='username')
+				input(type='text', placeholder='email', name='email')
+				input(type='password', placeholder='password', name='password')
+				button.btn(type="submit", name="submit") Login
+				
+		a(href='/register') register here

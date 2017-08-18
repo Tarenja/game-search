@@ -1,22 +1,30 @@
 {
-  "name": "business_website",
+  "name": "groupproject",
   "version": "1.0.0",
-  "description": "NodeJS assignment",
+  "description": "Group Project",
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/FCWBR/business_website.git"
+    "url": "git+https://github.com/Tarenja/game-search.git"
   },
-  "author": "Axel de Windt",
+  "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/FCWBR/business_website/issues"
+    "url": "https://github.com/Tarenja/game-search/issues"
   },
-  "homepage": "https://github.com/FCWBR/business_website#readme",
+  "homepage": "https://github.com/Tarenja/game-search#readme",
   "dependencies": {
-    "express": "^4.15.3"
+    "bcrypt": "^1.0.2",
+    "body-parser": "^1.17.2",
+    "connect-session-sequelize": "^4.1.0",
+    "express": "^4.15.4",
+    "express-session": "^1.15.5",
+    "pg": "^7.1.2",
+    "pg-hstore": "^2.3.2",
+    "pug": "^2.0.0-rc.3",
+    "sequelize": "^4.5.0"
   }
 }

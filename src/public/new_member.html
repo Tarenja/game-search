@@ -21,19 +21,32 @@
   <br/>
  <h2>Sign Up Here</h2>
   <div class="form">
+  <form action="/action_page.php">     
+      <label for="firstname">firstname</label>
+      <input type="text" id="firstname" name="firstname" placeholder="Enter your first..." required>
+    </form>
+    <form action="/action_page.php">     
+      <label for="lastname">Lastname</label>
+      <input type="text" id="lastname" name="lastname" placeholder="Please enter your lastname..." required>
+    </form>
+
     <form action="/action_page.php">     
       <label for="username">Username</label>
       <input type="text" id="username" name="username" placeholder="Please enter your username..." required>
-    </form>      
+    </form>
+    <form action="/action_page.php">  
+      <label for="email">Email</label>
+      <input type="text" id="email" name="password" placeholder="Please enter you email..." required> 
+    </form>        
     <form action="/action_page.php">  
       <label for="password">Password  </label>
-      <input type="text" id="password" name="password" placeholder="Password..." required> 
+      <input type="text" id="password" name="password" placeholder="Please enter your password..." required> 
     </form>  
     <form action="/action_page.php">  
-      <label for="repeat_password">Repeat Password</label>
-      <input type="text" id="password" name="repeat_password" placeholder="Repeat Password..." required>
+      <label for="confirm_password">Confirm Password</label>
+      <input type="text" id="password" name="password2" placeholder="Please repeat your password..." required>
     <input type="submit" value="Submit">
-    <button id="button">Find Games!</button>
+    <button id="button">submit</button>
     </form>
     </div>
     <br/>

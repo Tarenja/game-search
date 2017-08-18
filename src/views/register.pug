@@ -1,16 +1,128 @@
 doctype html
 html
-	head
-	body
-		if user
-			h1 Already a Known User!
-		else
-			
-			form(method='POST' action='/register')
-				input(type='text', placeholder='firstname', name='firstname')
-				input(type='text', placeholder='lastname', name='lastname')
-				input(type='text', placeholder='username', name='username')
-				input(type='text', placeholder='email', name='email')
-				input(type='password', placeholder='password', name='password')
-				input(type='password', placeholder='confirm password', name='password2')
-				button.btn(type="submit", name="submit") Register
+  head
+    title New Member
+    link(rel='stylesheet', type='text/css', href='main.css')
+    link(href='https://fonts.googleapis.com/css?family=Source+Sans+Pro', rel='stylesheet')
+    script(src='https://code.jquery.com/jquery-1.10.2.js')
+  body
+    .container1
+      br
+      img.logo(src='img/pacman.jpg')
+      h1 Games 4 U
+      .navigation
+        // <img class="logo" src="img/pacman.jpg">
+        ul
+          li
+            a(href='index.html') Home
+      br
+      br
+      h2 Sign Up Here
+      .form
+        form(action='/action_page.php')
+          label(for='firstname') firstname
+          input#firstname(type='text', name='firstname', placeholder='Enter your first...', required='')
+        form(action='/action_page.php')
+          label(for='lastname') Lastname
+          input#lastname(type='text', name='lastname', placeholder='Please enter your lastname...', required='')
+        form(action='/action_page.php')
+          label(for='username') Username
+          input#username(type='text', name='username', placeholder='Please enter your username...', required='')
+        form(action='/action_page.php')
+          label(for='email') Email
+          input#email(type='text', name='password', placeholder='Please enter you email...', required='')
+        form(action='/action_page.php')
+          label(for='password') Password  
+          input#password(type='text', name='password', placeholder='Please enter your password...', required='')
+        form(action='/action_page.php')
+          label(for='confirm_password') Confirm Password
+          input#password(type='text', name='password2', placeholder='Please repeat your password...', required='')
+          input(type='submit', value='Submit')
+          button#button submit
+      br
+      br
+      br
+      br
+      br
+      br
+      br
+      br
+      br
+      br
+      br
+      br
+      br
+      br
+      br
+      br
+      br
+      br
+      br
+      br
+      br
+      br
+      br
+      br
+      br
+      br
+      br
+      br
+      br
+      br
+      br
+      br
+      br
+      br
+      br
+      br
+      br
+      br
+      br
+      br
+      br
+      br
+      br
+      br
+      br
+      footer
+        #footer
+          #footermenu
+            ul
+              li Get help
+              li Advertisement
+              li Contact
+              li News
+              li About GAMES 4 U
+          br
+          #socialicons
+            ul
+              h4 SOCIAL
+              li
+                img(src='img/social/facebook.png')
+              li
+                img(src='img/social/instagram.png')
+              li
+                img(src='img/social/twitter.png')
+              li
+                img(src='img/social/youtube.png')
+          #copyrights © 2017 Games4all, Inc. All Rights Reserved
+      script.
+        $(document).mousemove(function() {
+        $("#header_button").animate({
+        opacity: '1'
+        });
+        });
+        var modal = document.getElementById('myModal');
+        var btn = document.getElementById("bookNow");
+        var span = document.getElementsByClassName("close")[0];
+        btn.onclick = function() {
+        modal.style.display = "block";
+        }
+        span.onclick = function() {
+        modal.style.display = "none";
+        }
+        window.onclick = function(event) {
+        if (event.target == modal) {
+        modal.style.display = "none";
+        }
+        }

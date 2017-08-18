@@ -1,15 +1,100 @@
 doctype html
 html
-	head
-	body
-		if user
-			h1 Welcome to the Homepage!
-		else
-			
-			form(action='/login' method='post')
-				input(type='text', placeholder='username', name='username')
-				input(type='text', placeholder='email', name='email')
-				input(type='password', placeholder='password', name='password')
-				button.btn(type="submit", name="submit") Login
-				
-		a(href='/register') register here
+  head
+    title PACDUDE
+    link(rel='stylesheet', type='text/css', href='main.css')
+    link(href='https://fonts.googleapis.com/css?family=Source+Sans+Pro', rel='stylesheet')
+    script(src='https://code.jquery.com/jquery-1.10.2.js')
+  body
+    .container1
+      br
+      img.logo(src='img/pacman.jpg')
+      h1 PACDUDE
+      .navigation
+        ul
+          li
+            a(href='index.html') Home
+          li
+            a(href='look4Games.html') Look 4 Games!
+          li
+            a(href='listOfGames.html') List Of Games 4 U!
+          li
+            a(href='merchandise.html') Merchandise
+      .example
+      br
+      h2 Members Sign In
+      .form
+        form(action='/action_page.php')
+          label(for='username') Username
+          input#username(type='text', name='username', placeholder='please enter your username...', required='')
+        form(action='/action_page.php')
+          label(for='password') Password
+          input#password(type='text', name='password', placeholder='Password...', required='')
+          input(type='submit', value='Submit')
+          button#button Find Games!
+      //
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+      a(href='new_member.html')
+        h3 New Member? Sign Up Here!
+      br
+      br
+      br
+      br
+      footer
+        #footer
+          #footermenu
+            ul
+              li Get help
+              li Advertisement
+              li Contact
+              li News
+              li About GAMES 4 U
+          br
+          #socialicons
+            ul
+              h4 SOCIAL
+              li
+                img(src='img/social/facebook.png')
+              li
+                img(src='img/social/instagram.png')
+              li
+                img(src='img/social/twitter.png')
+              li
+                img(src='img/social/youtube.png')
+          #copyrights © 2017 Games4all, Inc. All Rights Reserved
+      script.
+        $(document).mousemove(function() {
+        $("#header_button").animate({
+        opacity: '1'
+        });
+        });
+        var modal = document.getElementById('myModal');
+        var btn = document.getElementById("bookNow");
+        var span = document.getElementsByClassName("close")[0];
+        btn.onclick = function() {
+        modal.style.display = "block";
+        }
+        span.onclick = function() {
+        modal.style.display = "none";
+        }
+        window.onclick = function(event) {
+        if (event.target == modal) {
+        modal.style.display = "none";
+        }
+        }

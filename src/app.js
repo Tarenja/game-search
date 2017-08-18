@@ -95,11 +95,11 @@ const Key = sequelize.define('keys', {
 sequelize.sync()
 
 function Cart(oldCart) {
-  this.items = oldCart.items || {},
+  this.items = oldCart.items || {};
   this.totalQty = oldCart.totalQty || 0;
   this.totalPrice = oldCart.totalPrice || 0;
   this.add = function (item, id) {
-    const storedItem = this.items[id];
+    let storedItem = this.items[id];
     if (!storedItem) {
       storedItem = this.items[id] = {item: item, qty: 0, price: 0};
     }
@@ -107,9 +107,9 @@ function Cart(oldCart) {
     storedItem.price = storedItem.item.price * storedItem.qty;
     this.totalQty++;
     this.totalPrice += storedItem.item.price;
-  }
-  this.generateArray() = function() {
-    const arr = [];
+  };
+  this.generateArray = function() {
+    let arr = [];
     for (var id in this.items) {
       arr.push(this.items[id]);
     }
@@ -194,22 +194,33 @@ app.post('/login', (req, res) => {
   });
 });
 
+app.get('/logout', (req, res) =>{
+	req.session.destroy(function(error) {    //logging out user and destorying session
+		if(error) {
+			throw error;
+		}
+		res.redirect('/?message=' + encodeURIComponent("Successfully logged out."));
+	})
+});
+
 app.get('/add-to-cart/:id', (req,res) => {
   const productId = req.params.id;
-  const cart = new Cart(req.session.cart ? req.session.cart : {})
+  const cart = new Cart(req.session.cart ? req.session.cart: {});
 
   Product.findOne({
     where: {id: productId}
   })
   .then((result) => {
-    if (err) {
-      return res.redirect('/');
-    }
-    cart.add(product, product.id);
+    // console.log(result);
+    cart.add(result, result.id); //product, product.id
     req.session.cart = cart;
     console.log(req.session.cart);
     res.redirect('/');
-  });
+  })
+  .catch((err) => {
+    console.error(err)
+    return res.redirect('/');
+  })
 });
 
 const server = app.listen(3000, () => {

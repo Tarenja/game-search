@@ -1,0 +1,22 @@
+{
+  "name": "business_website",
+  "version": "1.0.0",
+  "description": "NodeJS assignment",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FCWBR/business_website.git"
+  },
+  "author": "Axel de Windt",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/FCWBR/business_website/issues"
+  },
+  "homepage": "https://github.com/FCWBR/business_website#readme",
+  "dependencies": {
+    "express": "^4.15.3"
+  }
+}

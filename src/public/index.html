@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Games4U</title>
+    <link rel="stylesheet" type="text/css" href="main.css">
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script> 
+</head>
+<body>
+  <div class="container1">
+    <br/>
+    <img class="logo" src="img/pacman.jpg">   
+    <h1>Games 4 U</h1>
+  <div class="navigation">   
+    <ul>              
+      <li><a href="index.html">Home</a></li>
+      <li><a href="look4Games.html">Look 4 Games!</a></li>
+      <li><a href="listOfGames.html">List Of Games 4 U!</a></li>
+      <li><a href="merchandise.html">merchandise</a></li>
+    </ul>
+  </div>            
+
+<div class="example"></div>
+
+
+
+
+     <!-- <div class="about-section">
+        <h3>About Games 4 all!</h3>
+        <p>Games 4 all is a platform where everyone kind find his favorite games. Tim, Jolissa and Axel founded ...joyed success as a solo act and worked with Snoop Dogg, Eminem and 50 Cent.</br>
+        </p>
+        <p>Gangsta rap pioneer Dr. Axel was born on February 18, 1975. A music fan from the start, Axel started working as a DJ in his teens. His first major success came with the rap group N.W.A. and he later co-founded Death Row Records in 1991. In 1992, his first solo album, The Chronic, became a huge hit. Axel started up Aftermath Entertainment in 1996 and signed Eminem and 50 Cent to his label. He eventually co-founded the company Beats Electronics with Jimmy Iovine and made millions on its 2014 sale to Apple. </p>
+    </div> -->
+ <br/>
+ <h2>Members Sign In</h2>
+  <div class="form">
+    <form action="/action_page.php">     
+      <label for="username">Username</label>
+      <input type="text" id="username" name="username" placeholder="please enter your username..." required>
+    </form>      
+    <form action="/action_page.php">  
+      <label for="password">Password</label>
+      <input type="text" id="password" name="password" placeholder="Password..." required>     
+      <input type="submit" value="Submit">
+      <button id="button">Find Games!</button>      
+      </form>      
+    </div>
+<!--     <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>   
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/> -->
+    <a href="new_member.html"><h3>New Member? Sign Up Here!</h3></a>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+
+    <footer>
+        <div id="footer">
+            <div id="footermenu">
+                <ul>
+                    <li>Get help</li>
+                    <li>Advertisement</li>
+                    <li>Contact</li>
+                    <li>News</li>
+                    <li>About GAMES 4 U</li>                    
+                </ul>
+            </div>          
+             <br/>
+            <div id="socialicons">
+                <ul>
+                    <h4>SOCIAL</h4>
+                    <li><img src="img/social/facebook.png"></li>
+                    <li><img src="img/social/instagram.png"></li>
+                    <li><img src="img/social/twitter.png"></li>
+                    <li><img src="img/social/youtube.png"></li>
+                </ul>
+            </div>
+
+            <div id="copyrights">© 2017 Games4all, Inc. All Rights Reserved</div>
+       </div>
+
+    </footer>
+    <script>
+    $(document).mousemove(function() {
+        $("#header_button").animate({
+            opacity: '1'
+        });
+    });
+
+    var modal = document.getElementById('myModal');
+    var btn = document.getElementById("bookNow");
+    var span = document.getElementsByClassName("close")[0];
+
+    btn.onclick = function() {
+        modal.style.display = "block";
+    }
+
+    span.onclick = function() {
+        modal.style.display = "none";
+    }
+
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+    </script>
+</div>
+</body>
+
+</html>

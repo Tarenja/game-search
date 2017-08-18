@@ -1,0 +1,94 @@
+<html>
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <script src="https://www.paypalobjects.com/api/checkout.js"></script>
+</head>
+
+<body>
+    <div id="paypal-button-container"></div>
+
+    <script>
+        paypal.Button.render({
+
+            env: 'sandbox', // sandbox | production
+
+            // PayPal Client IDs - replace with your own
+            // Create a PayPal app: https://developer.paypal.com/developer/applications/create
+            client: {
+                sandbox:    'Afk9_B9Pk1VrH-AM4gxO5KpKB4j2wLjxgmPKGTCJ9kRv0D6HByeVeXhoB2aVidxR9y1Sys_PCb25FZid',
+                production: '<insert production client id>'
+            },
+
+            // Show the buyer a 'Pay Now' button in the checkout flow
+            commit: true,
+
+            // payment() is called when the button is clicked
+            payment: function(data, actions) {
+
+                // Make a call to the REST api to create the payment
+                return actions.payment.create({
+                    payment: {
+                        transactions: [
+                            {
+                                amount: { total: '10.00', currency: 'EUR' }
+                            }
+                        ]
+                    }
+                });
+            },
+
+            // onAuthorize() is called when the buyer approves the payment
+            onAuthorize: function(data, actions) {
+
+                // Make a call to the REST api to execute the payment
+                return actions.payment.execute().then(function() {
+                    window.alert('Payment Complete!');
+                });
+            }
+
+        }, '#paypal-button-container');
+
+    </script>
+</body>
+</html>
+
+
+
+<!-- <div id="paypal-button"></div>
+
+<script src="https://www.paypalobjects.com/api/checkout.js"></script>
+
+<script>
+    paypal.Button.render({
+
+        env: 'production', // Or 'sandbox'
+
+        client: {
+            sandbox:    'Afk9_B9Pk1VrH-AM4gxO5KpKB4j2wLjxgmPKGTCJ9kRv0D6HByeVeXhoB2aVidxR9y1Sys_PCb25FZid',
+            production: 'AZgweBTEQOOD32LQ5uRTNUUID0ymR1YD73O-_SL_ZneUvAPUyPXG7X4nZ5xbPVpjA_k4WAULXUNGpsBG'
+        },
+
+        commit: true, // Show a 'Pay Now' button
+
+        payment: function(data, actions) {
+            return actions.payment.create({
+                payment: {
+                    transactions: [
+                        {
+                            amount: { total: '1.00', currency: 'USD' }
+                        }
+                    ]
+                }
+            });
+        },
+
+        onAuthorize: function(data, actions) {
+            return actions.payment.execute().then(function(payment) {
+
+                // The payment is complete!
+                // You can now show a confirmation message to the customer
+            });
+        }
+
+    }, '#paypal-button');
+</script> -->

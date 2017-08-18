@@ -4,6 +4,7 @@ const bodyParser = require('body-parser');
 const Sequelize = require('sequelize');
 const session = require('express-session');
 const bcrypt = require('bcrypt');
+const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
 //configuring and initializing modules
 const app = express();
@@ -14,8 +15,14 @@ app.use(bodyParser.urlencoded({ extended: true }));
 const sequelize = new Sequelize('groupshop', process.env.POSTGRES_USER, process.env.POSTGRES_PASSWORD, {
   host: 'localhost',
   dialect: 'postgres',
+  storage: './session.postgres'
 });
 app.use(session({
+  store: new SequelizeStore({
+  db: sequelize,
+  checkExpirationInterval: 15 * 60 * 1000, // The interval at which to cleanup expired sessions in milliseconds.
+  expiration: 24 * 60 * 60 * 1000 // The maximum age (in milliseconds) of a valid session.
+  }),
   secret: "such secret, many wows",
   saveUninitialized: true,
   resave: false
@@ -86,6 +93,29 @@ const Key = sequelize.define('keys', {
 // Purchase.belongsTo(Product);
 
 sequelize.sync()
+
+function Cart(oldCart) {
+  this.items = oldCart.items || {},
+  this.totalQty = oldCart.totalQty || 0;
+  this.totalPrice = oldCart.totalPrice || 0;
+  this.add = function (item, id) {
+    const storedItem = this.items[id];
+    if (!storedItem) {
+      storedItem = this.items[id] = {item: item, qty: 0, price: 0};
+    }
+    storedItem.qty++;
+    storedItem.price = storedItem.item.price * storedItem.qty;
+    this.totalQty++;
+    this.totalPrice += storedItem.item.price;
+  }
+  this.generateArray() = function() {
+    const arr = [];
+    for (var id in this.items) {
+      arr.push(this.items[id]);
+    }
+    return arr;
+  };
+};
 
 //Routing, login form is on index page
 app.get('/', (req,res) => {
@@ -161,6 +191,24 @@ app.post('/login', (req, res) => {
     console.error(error);           //if any error occurs showing an invalid message to user
     res.redirect('/?message=' + encodeURIComponent("Invalid email or password."));
   });
+  });
+});
+
+app.get('/add-to-cart/:id', (req,res) => {
+  const productId = req.params.id;
+  const cart = new Cart(req.session.cart ? req.session.cart : {})
+
+  Product.findOne({
+    where: {id: productId}
+  })
+  .then((result) => {
+    if (err) {
+      return res.redirect('/');
+    }
+    cart.add(product, product.id);
+    req.session.cart = cart;
+    console.log(req.session.cart);
+    res.redirect('/');
   });
 });
 

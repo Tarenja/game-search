@@ -251,6 +251,14 @@ h4 {
     margin: auto auto 50px auto;
 }
 
+#footermenu {
+    font-size: 1.5vw;
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+    background-color: blue;
+}
+
 .card {
     background-color: #ffffff;
     border-radius: 10px;

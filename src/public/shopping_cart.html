@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <script src="https://www.paypalobjects.com/api/checkout.js"></script>
     <title>Shopping_Cart</title>
     <link rel="stylesheet" type="text/css" href="main.css">
     <link href="https://fonts.googleapis.com/css?family=Fira+Sans+Extra+Condensed" rel="stylesheet">
@@ -12,60 +15,39 @@
     <br/>
     <img class="logo" src="img/pacman.jpg">  
     <h1>Shopping Cart</h1>   
-    <div class="navigation">     
+    <div class="navigation">             
         <ul>
-            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html">home</a></li>
             <li><a href="look4Games.html">Look 4 Games!</a></li>
             <li><a href="listOfGames.html">List Of Games 4 U!</a></li>
-            <li><button id="button">Find Games!</button></li>
+            <li><a href="merchandise.html">Merchandise</a></li> 
         </ul>
     </div>
-    <br/>
-    <br/>
-    <br/>
-    <br/>
-    <br/>
-    <br/>
-    <br/>   
-    <br/>
-    <br/>
-    <br/>
-    <br/>
-    <br/>
-    <br/>
-    <br/>
-    <br/>   
-    <br/>
-    <br/>
-    <br/>
-    <br/>   
-    <br/>
-    <br/>
-    <br/>
-    <br/>
-    <br/>
-    <br/>
-    <br/>
-    <br/>
-    <br/>
-    <br/> 
-    
+    <center>
+    <div class="row1">
+            <!-- card 1 -->
+            <div class="card2">
+                <div class="imgbox9"></div>
+                <div class="divider"></div>
+                <h4>Product selected</h4>
+                <p>This product is in your shopping cart!</p>
+                <p> 0 X
+                <div class="divider"></div>
+                <div class="totalprice">
+                    <div class="price">
+                        <p>Total price: €000,00</p>
+                    </div>
+                    <div class="btw">
+                        <p>Prices incl. btw</p>
+                    </div>
+                </div>
+               <div id="paypal-button-container"><a href="shopping_cart.html">Buy Now</a></div>
+            </div>
+            </center>
+            </div>
+
 <footer>
     <div id="footer">
-        <div id="footermenu">
-            <ul>
-                <h4>GET HELP</h4>
-                <li>Order Status</li>
-                <li>Payment Options</li>
-                <li>Contact Us</li>
-                </ul>
-                <ul>
-                    <h4>NEWS</h4>
-                    <li>About Axel</li>
-                    <li>Careers</li>
-                    <li>Investors</li>
-                </ul>
-            </div>
             <div id="socialicons">
                 <ul>
                      <br/>
@@ -85,5 +67,47 @@
         </div>
     </footer>
 </div>
+<script>
+        paypal.Button.render({
+
+            env: 'sandbox', // sandbox | production
+
+            // PayPal Client IDs - replace with your own
+            // Create a PayPal app: https://developer.paypal.com/developer/applications/create
+            client: {
+                sandbox:    'Afk9_B9Pk1VrH-AM4gxO5KpKB4j2wLjxgmPKGTCJ9kRv0D6HByeVeXhoB2aVidxR9y1Sys_PCb25FZid',
+                production: '<insert production client id>'
+            },
+
+            // Show the buyer a 'Pay Now' button in the checkout flow
+            commit: true,
+
+            // payment() is called when the button is clicked
+            payment: function(data, actions) {
+
+                // Make a call to the REST api to create the payment
+                return actions.payment.create({
+                    payment: {
+                        transactions: [
+                            {
+                                amount: { total: '10.00', currency: 'EUR' }
+                            }
+                        ]
+                    }
+                });
+            },
+
+            // onAuthorize() is called when the buyer approves the payment
+            onAuthorize: function(data, actions) {
+
+                // Make a call to the REST api to execute the payment
+                return actions.payment.execute().then(function() {
+                    window.alert('Payment Complete!');
+                });
+            }
+
+        }, '#paypal-button-container');
+
+    </script>
 </body>
 </html>

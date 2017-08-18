@@ -13,13 +13,6 @@ h2
     padding-left: 120px;
     }
 
-
-@media screen and (min-width: 780px) {
-    body {
-        background: white;
-    }
-}
-
 h3  
     {
     /*text-align: left; */
@@ -27,16 +20,6 @@ h3
     text-transform: uppercase;
     padding-left: 120px;
     }
-
-
-.example {
-    border: 5px solid purple;
-    width: 100px;
-    height: 100px;
-    position: absolute;
-    top: 0px;
-    left: 400px;
-}
 
 /*.navigation a {
     font-family: 'Source Sans Pro', sans-serif;
@@ -121,7 +104,8 @@ li  {
 
 #copyrights {
     float: left;
-    margin-top: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
     margin-left: 40px;
     font-family: helvetica;
     font-weight: medium;
@@ -132,26 +116,26 @@ li  {
 
 #socialicons img {
     margin: 5px;
-    width: 6%;
+    width: 4%;
 }
 
 #socialicons li {
-    margin-top: 10px;
+    margin-top: 0px;
     display: inline;
     padding-right: 4px;
     list-style: none;
 }
 
 #socialicons {
-    margin-left: 50px;
-    float: right;
-    display: block;
+    margin-left: 0px;
+    float: left;
+    display: inline-block;
 }
 
 label[for=username] {
     width: 100%;
     padding: 12px 20px;
-    margin: 8px -1px;
+    margin: 8px 0;
     box-sizing: border-box;
     border: none;
     /*background-color: white;*/
@@ -251,30 +235,112 @@ h4 {
     margin: auto auto 50px auto;
 }
 
-#footermenu {
-    font-size: 1.5vw;
-    width: 80%;
-    margin: 0 auto;
-    text-align: center;
-    background-color: blue;
-}
-
 .card {
     background-color: #ffffff;
     border-radius: 10px;
     border-color: #e7e7e7, 1px, solid;
     width: 22%;
     margin: auto;
-    height: 300px;
+    height: 500px;
     display: inline-block;
     border: 1px solid #e7e7e7;
 }
+
+.card2 {
+    background-color: #ffffff;
+    border-radius: 10px;
+    border-color: #e7e7e7, 1px, solid;
+    width: 50%;
+    margin: auto;
+    height: 500px;
+    display: inline-block;
+    border: 1px solid #e7e7e7;
+}
+
+.card2 img {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    height: 100%;
+    border-radius: 6px;
+}
+
+.card2 h4 {
+    margin: 10px 16px 10px 16px;
+    font-family: helvetica;
+}
+
+.card2 p {
+    margin: 10px 16px 16px 16px;
+    color: black;
+}
+
+.card2 .divider {
+    width: 100%;
+    height: 1px;
+    background-color: #dddddd;
+}
+
+.card2 .totalprice {
+    display: inline-block;
+}
+
+.card2 .price p {
+    margin-right: 0px;
+    margin-top: 10px;
+    margin-bottom: -2px;
+    font-family: helvetica;
+    font-size: 24px;
+    font-weight: bold;
+    color: black;
+    float: left;
+
+}
+
+.card2 .price .btw p {
+    width: 30px;
+    float: left;
+    font-family: helvetica;
+    font-weight: medium;
+    font-size: 8px;
+    margin-top: 0px;
+}
+
+.card2 .buy-button {
+    display: block;
+    border-radius: 5px;
+    float: right;
+    background-color: #f4ce42;
+    width: 100px;
+    height: 20px;
+    padding: 10px 16px;
+}
+
+.card2 .buy-button {
+    margin: 10px 16px 10px 0px;
+    font-family: helvetica;
+    color: #ffffff;
+    text-align: center;
+}
+
+.card2 .imgbox9 {
+    height: 250px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    background-image: url("img/merch/pacglasses.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 250px;
+    width: 100%;
+}
+
 
 .card .imgbox1 {
     height: 160px;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
-    background-image: url("img/pacman.jpg");
+    background-image: url("img/merch/pacglasses.jpg");
     background-repeat: no-repeat;
     background-position: center;
     height: 150px;
@@ -285,7 +351,7 @@ h4 {
     height: 160px;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
-    background-image: url("img/misspacman.jpg");
+    background-image: url("img/merch/pacman.jpg");
     background-repeat: no-repeat;
     background-position: center;
     height: 150px;
@@ -296,7 +362,7 @@ h4 {
     height: 160px;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
-    background-image: url("img/flashman.jpg");
+    background-image: url("img/merch/pacshirt.jpg");
     background-repeat: no-repeat;
     background-position: center;
     height: 150px;
@@ -307,7 +373,7 @@ h4 {
     height: 160px;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
-    background-image: url("img/tapman.jpg");
+    background-image: url("img/merch/paccup.jpg");
     background-repeat: no-repeat;
     background-position: center;
     height: 150px;
@@ -358,6 +424,50 @@ h4 {
     width: 100%;
 }
 
+.card .imgbox9 {
+    height: 250px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    background-image: url("img/merch/pacglasses.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 250px;
+    width: 100%;
+}
+
+.card .imgbox10 {
+    height: 250px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    background-image: url("img/merch/paccup.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 250px;
+    width: 100%;
+}
+
+.card .imgbox11 {
+    height: 250px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    background-image: url("img/merch/pacshirt.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 250px;
+    width: 100%;
+}
+
+.card .imgbox12 {
+    height: 250px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    background-image: url("img/merch/pacarc.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 250px;
+    width: 100%;
+}
+
 .card img {
     width: 100%;
     margin-left: auto;
@@ -374,7 +484,7 @@ h4 {
 
 .card p {
     margin: 10px 16px 16px 16px;
-    color: white;
+    color: black;
 }
 
 .card .divider {
@@ -394,8 +504,9 @@ h4 {
     font-family: helvetica;
     font-size: 24px;
     font-weight: bold;
-    color: white;
+    color: black;
     float: left;
+
 }
 
 .card .price .btw p {
@@ -411,7 +522,7 @@ h4 {
     display: block;
     border-radius: 5px;
     float: right;
-    background-color: #38cc55;
+    background-color: #f4ce42;
     width: 100px;
     height: 20px;
     padding: 10px 16px;
@@ -422,4 +533,47 @@ h4 {
     font-family: helvetica;
     color: #ffffff;
     text-align: center;
+}
+
+
+footer {
+    float: right;
+    display: block;
+    height: 10%;
+    width: 100%;
+    background-color: #000000;
+}
+
+#footer {
+    width: 100%;
+    margin-top: 0px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#footer ul {
+    text-align: left;
+    list-style: none;
+    float: left;
+    padding-left: 0px;
+    margin-left: 40px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+#footer h4 {
+    font-family: helvetica;
+    color: #fff;
+    margin-top: 8px;
+    margin-bottom: 0;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+#footer li {
+    margin-top: 0;
+    font-family: helvetica;
+    font-size: 16px;
+    color: #dddddd;
+    padding-top: 10px;
 }

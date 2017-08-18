@@ -10,7 +10,7 @@ const SequelizeStore = require('connect-session-sequelize')(session.Store);
 const app = express();
 app.set('views', __dirname + '/views');
 app.set('view engine', 'pug');
-app.use(express.static(__dirname + '/../public'));
+app.use(express.static(__dirname + '/public'));
 app.use(bodyParser.urlencoded({ extended: true }));
 const sequelize = new Sequelize('groupshop', process.env.POSTGRES_USER, process.env.POSTGRES_PASSWORD, {
   host: 'localhost',
@@ -66,9 +66,6 @@ const Product = sequelize.define('products', {
   description: {
     type: Sequelize.TEXT
   },
-  amount: {
-    type: Sequelize.INTEGER
-  },
   cover: {
     type: Sequelize.STRING  //image url
   }
@@ -123,6 +120,18 @@ app.get('/', (req,res) => {
     message: req.query.message,
     user: req.session.user
   })
+});
+
+app.get('/look4games', (req,res) => {
+  res.render('look4games');
+});
+
+app.get('/profile', (req,res) => {
+  res.render('profile2');
+});
+
+app.get('/merchandise', (req,res) => {
+  res.render('merch');
 });
 
 app.get('/register', (req,res) => {
@@ -182,7 +191,7 @@ app.post('/login', (req, res) => {
     .then((result) => {
       if (user !== null && result === true) {
         req.session.user = user;
-        res.redirect('/');          //if they exist and info is correct, start session for user
+        res.redirect('/profile');          //if they exist and info is correct, start session for user
       } else {
         res.redirect('/?message=' + encodeURIComponent("Invalid email or password.")); //if incorrect showing error to user
       }

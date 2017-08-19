@@ -14,26 +14,25 @@ html
 				// <img class="logo" src="img/pacman.jpg">
 				ul
 					li
-						a(href='index.html') Home
+						a(href='/') Home
 			br
 			br
 			h2 Sign Up Here
 			.form
-				form(action='/register')
+				form(action='/register' method='post')
 					label(for='firstname') First Name
 					input#firstname(type='text', name='firstname', placeholder='Enter your first...', required)
 					label(for='lastname') Last Name
-					input#lastname(type='text', name='lastname', placeholder='Please enter your lastname...', required)
+					input#lastname(type='text', name='lastname', placeholder='Please enter your last name...', required)
 					label(for='username') Username
 					input#username(type='text', name='username', placeholder='Please enter your username...', required)
 					label(for='email') Email
-					input#email(type='text', name='password', placeholder='Please enter you email...', required)
+					input#email(type='text', name='email', placeholder='Please enter you email...', required)
 					label(for='password') Password  
 					input#password(type='text', name='password', placeholder='Please enter your password...', required)
-					label(for='confirm_password') Confirm Password
+					label(for='password2') Confirm Password
 					input#password(type='text', name='password2', placeholder='Please repeat your password...', required)
-					input(type='submit', value='Submit')
-					button#button submit
+					input.btn(type='submit', value='Submit')
 			br
 			br
 			br
@@ -101,7 +100,7 @@ html
 							li
 								img(src='img/social/youtube.png')
 					#copyrights © 2017 Games4all, Inc. All Rights Reserved
-			script.
+			//script.
 				$(document).mousemove(function() {
 				$("#header_button").animate({
 				opacity: '1'

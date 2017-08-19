@@ -73,42 +73,27 @@ const Product = sequelize.define('products', {
   timestamps: false
 });
 
-const Key = sequelize.define('keys', {
-  key: {
-    type: Sequelize.STRING
-  }
-}, {
-  timestamps: false
-});
+sequelize.sync();
 
-// const Purchase = sequelize.define('purchases', {
-// });
-//
-// User.hasMany(Purchase);
-// Product.hasMany(Purchase);
-// Purchase.belongsTo(User);
-// Purchase.belongsTo(Product);
-
-sequelize.sync()
-
+//creating a Class for the shopping cart globally so it can be used in multiple places
 function Cart(oldCart) {
-  this.items = oldCart.items || {};
-  this.totalQty = oldCart.totalQty || 0;
+  this.items = oldCart.items || {};  //using oldCart to check if there is already a shopping cart, and adding to it if there is
+  this.totalQty = oldCart.totalQty || 0; //if there is not setting the cart to an empty object with 0 items and value
   this.totalPrice = oldCart.totalPrice || 0;
-  this.add = function (item, id) {
-    let storedItem = this.items[id];
+  this.add = function (item, id) {  //telling it what to do when adding a new item to the cart
+    let storedItem = this.items[id]; //storing the id of the object being added
     if (!storedItem) {
       storedItem = this.items[id] = {item: item, qty: 0, price: 0};
     }
     storedItem.qty++;
     storedItem.price = storedItem.item.price * storedItem.qty;
     this.totalQty++;
-    this.totalPrice += storedItem.item.price;
+    this.totalPrice += storedItem.item.price; //making sure the price and qty of the items is iterated
   };
-  this.generateArray = function() {
+  this.generateArray = function() { //generates an array to count all the items in the cart object
     let arr = [];
     for (var id in this.items) {
-      arr.push(this.items[id]);
+      arr.push(this.items[id]); //pushes each item it can find in the cart into the array
     }
     return arr;
   };
@@ -120,18 +105,6 @@ app.get('/', (req,res) => {
     message: req.query.message,
     user: req.session.user
   })
-});
-
-app.get('/look4games', (req,res) => {
-  res.render('look4games');
-});
-
-app.get('/profile', (req,res) => {
-  res.render('profile2');
-});
-
-app.get('/merchandise', (req,res) => {
-  res.render('merch');
 });
 
 app.get('/register', (req,res) => {
@@ -152,7 +125,7 @@ app.post('/register', (req,res) => {
       })
       .then((user) => {
         req.session.user = user;
-        res.redirect('/')
+        res.redirect('/login')
       })
     })
     .catch((error) => {
@@ -177,12 +150,12 @@ app.post('/login', (req, res) => {
   }
   const username = req.body.username;
   const password = req.body.password;
-  const email = req.body.email;
+  // const email = req.body.email;
 
   User.findOne({
     where: {
       username: req.body.username,
-      email: req.body.email    //verifying if user exists
+      // email: req.body.email    //verifying if user exists
     }
   })
   .then((user) => {
@@ -208,28 +181,91 @@ app.get('/logout', (req, res) =>{
 		if(error) {
 			throw error;
 		}
-		res.redirect('/?message=' + encodeURIComponent("Successfully logged out."));
+		res.redirect('/logged_out');
 	})
 });
 
-app.get('/add-to-cart/:id', (req,res) => {
-  const productId = req.params.id;
-  const cart = new Cart(req.session.cart ? req.session.cart: {});
+app.get('/logged_out', (req,res) => {
+  res.render('logged_out');
+});
 
-  Product.findOne({
-    where: {id: productId}
-  })
-  .then((result) => {
-    // console.log(result);
-    cart.add(result, result.id); //product, product.id
-    req.session.cart = cart;
-    console.log(req.session.cart);
-    res.redirect('/');
-  })
-  .catch((err) => {
-    console.error(err)
-    return res.redirect('/');
-  })
+app.get('/look4games', (req,res) => {
+  res.render('look4games');
+});
+
+app.get('/profile', (req,res) => {
+  const user = req.session.user;
+  if (user === undefined) {
+    res.redirect('/?message=' + encodeURIComponent("Please log in"));
+  } else {
+    res.render('profile2', {
+      user: user
+    })
+  }
+});
+
+app.get('/merchandise', (req,res) => {
+  res.render('merch');
+});
+
+app.get('/shopcart', (req,res) => {
+    const user = req.session.user;
+    if (user === undefined) {
+      res.redirect('/?message=' + encodeURIComponent("Please log in"));
+    } else {
+      if (!req.session.cart) {
+        res.render('shopcart', {
+          user: user,
+        });
+      } else {
+        var cart = new Cart(req.session.cart);
+        var products = cart.generateArray();
+        const user = req.session.user;
+        if (user === undefined) {
+          res.redirect('/?message=' + encodeURIComponent("Please log in"));
+        } else {
+          res.render('shopcart', {
+            user: user,
+            totalPrice: cart.totalPrice,
+            products: products
+          })
+          console.log(products)
+        }
+      }
+    }
+});
+
+app.get('/purch', (req, res) => {
+  const user = req.session.user;
+  if (user === undefined) {
+    res.redirect('/?message=' + encodeURIComponent("Please log in"));
+  } else {
+    req.session.cart.destroy;
+    res.render('purchasecomplete')
+  }
+});
+
+app.get('/add-to-cart/:id', (req,res) => {
+  const user = req.session.user;
+  if (user === undefined) {
+    res.redirect('/?message=' + encodeURIComponent("Please log in"));
+  } else {
+    const productId = req.params.id;
+    const cart = new Cart(req.session.cart ? req.session.cart: {});
+    Product.findOne({
+      where: {id: productId}
+    })
+    .then((result) => {
+      cart.add(result, result.id); //product, product.id
+      req.session.cart = cart;
+      console.log(req.session.cart);
+      res.redirect('/shopcart');
+    })
+    .catch((err) => {
+      console.error(err)
+      return res.redirect('/');
+    })
+  }
 });
 
 const server = app.listen(3000, () => {

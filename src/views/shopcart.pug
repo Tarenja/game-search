@@ -34,9 +34,11 @@ html
 							p
 							if products
 								each item in products
-									| #{item.item.name} X #{item.qty}, price: #{item.price}
+									- var url = '/reduce/' + item.item.id
+									| #{item.item.name} X #{item.qty}, price: #{item.price} - 
+									a(href=url style={color: 'black'}) Remove One
+									a(href=url style={color: 'black'}) Remove All
 									br
-								.divider
 								.totalprice
 									.price
 										p Total price: €#{totalPrice}

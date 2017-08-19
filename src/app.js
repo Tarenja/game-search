@@ -90,6 +90,15 @@ function Cart(oldCart) {
     this.totalQty++;
     this.totalPrice += storedItem.item.price; //making sure the price and qty of the items is iterated
   };
+  this.reduceByOne = function(id) {
+    this.items[id].qty--;
+    this.items[id].price -= this.items[id].item.price;
+    this.totalQty--;
+    this.totalPrice -= this.items[id].item.price;
+    if (this.items[id].qty <= 0) {
+      delete this.items[id];
+    }
+  };
   this.generateArray = function() { //generates an array to count all the items in the cart object
     let arr = [];
     for (var id in this.items) {
@@ -258,7 +267,9 @@ app.get('/add-to-cart/:id', (req,res) => {
     .then((result) => {
       cart.add(result, result.id); //product, product.id
       req.session.cart = cart;
-      console.log(req.session.cart);
+      console.log(req.session.cart)
+    })
+    .then(() => {
       res.redirect('/shopcart');
     })
     .catch((err) => {
@@ -266,6 +277,19 @@ app.get('/add-to-cart/:id', (req,res) => {
       return res.redirect('/');
     })
   }
+});
+
+app.get('/reduce/:id', (req,res) => {
+  const user = req.session.user;
+  if (user === undefined) {
+    res.redirect('/?message=' + encodeURIComponent("Please log in"));
+  } else {
+    const productId = req.params.id;
+    const cart = new Cart(req.session.cart ? req.session.cart: {});
+    cart.reduceByOne(productId)
+    req.session.cart = cart;
+  }
+    res.redirect('/shopcart')
 });
 
 const server = app.listen(3000, () => {

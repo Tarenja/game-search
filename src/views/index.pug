@@ -22,15 +22,19 @@ html
 						a(href='/merchandise') Merchandise
 			.example
 			br
-			h2 Members Sign In
-			.form
-				form(action='/login')
-					label(for='username') Username
-					input#username(type='text', name='username', placeholder='please enter your username...', required)
-					label(for='password') Password
-					input#password(type='text', name='password', placeholder='Password...', required)
-					input(type='submit', value='Submit')
-					button#button Find Games!
+			if user
+				h2 Welcome #{user.username}! Thanks for being Awesome!
+			else
+				h2 Members Sign In
+				.form
+					form(action='/login' method='post')
+						label(for='username' name='username') Username
+						input#username(type='text', name='username', placeholder='please enter your username...', required)
+						label(for='password') Password
+						input#password(type='password', name='password', placeholder='Password...', required)
+						input(type='submit', value='Submit')
+			
+			h2#error-message= message
 			//
 				<br/>
 				<br/>

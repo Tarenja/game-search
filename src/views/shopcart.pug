@@ -1,96 +1,100 @@
 doctype html
 html
-  head
-    meta(charset='UTF-8')
-    meta(http-equiv='X-UA-Compatible', content='IE=edge')
-    script(src='https://www.paypalobjects.com/api/checkout.js')
-    title Shopping_Cart
-    link(rel='stylesheet', type='text/css', href='main.css')
-    link(href='https://fonts.googleapis.com/css?family=Fira+Sans+Extra+Condensed', rel='stylesheet')
-    link(href='https://fonts.googleapis.com/css?family=Source+Sans+Pro', rel='stylesheet')
-    link(href='https://fonts.googleapis.com/css?family=Gentium+Basic', rel='stylesheet')
-  body
-    .container6
-      br
-      img.logo(src='img/pacman.jpg')
-      h1 Shopping Cart
-      .navigation
-        ul
-          li
-            a(href='/') home
-          li
-            a(href='look4Games') Pacdude Games
-          li
-            a(href='listOfGames') List Of Games 4 U!
-          li
-            a(href='merchandise') Merchandise
-      center
-        .row1
-          // card 1
-          .card2
-            .imgbox9
-            .divider
-            h4 Product selected
-            p This product is in your shopping cart!
-            p
-              | 0 X
-              .divider
-              .totalprice
-                .price
-                  p Total price: €000,00
-                .btw
-                  p Prices incl. btw
-              #paypal-button-container
-                a(href='shopping_cart.html') Buy Now
-    footer
-      #footer
-        #socialicons
-          ul
-            h4 SOCIAL
-            li
-              a(href="//" +"www.facebook.com")
-                img(src='img/social/facebook.png')
-            li
-              a(href="//" +"www.instagram.com")
-                img(src='img/social/instagram.png')
-            li
-              a(href="//" +"www.twitter.com")
-                img(src='img/social/twitter.png')
-            li
-              a(href="//" +"www.youtube.com")
-                img(src='img/social/youtube.png')
-        #divider
-        #copyrights © 2017 Pacdude, Inc. All Rights Reserved
-    script.
-      paypal.Button.render({
-      env: 'sandbox', // sandbox | production
-      // PayPal Client IDs - replace with your own
-      // Create a PayPal app: https://developer.paypal.com/developer/applications/create
-      client: {
-      sandbox:    'Afk9_B9Pk1VrH-AM4gxO5KpKB4j2wLjxgmPKGTCJ9kRv0D6HByeVeXhoB2aVidxR9y1Sys_PCb25FZid',
-      production: '<insert production client id>'
-      },
-      // Show the buyer a 'Pay Now' button in the checkout flow
-      commit: true,
-      // payment() is called when the button is clicked
-      payment: function(data, actions) {
-      // Make a call to the REST api to create the payment
-      return actions.payment.create({
-      payment: {
-      transactions: [
-      {
-      amount: { total: '10.00', currency: 'EUR' }
-      }
-      ]
-      }
-      });
-      },
-      // onAuthorize() is called when the buyer approves the payment
-      onAuthorize: function(data, actions) {
-      // Make a call to the REST api to execute the payment
-      return actions.payment.execute().then(function() {
-      //- window.alert('Payment Complete!');
-      window.location.replace("/purch");
-      });
-      }
-      }, '#paypal-button-container');
+	head
+		meta(charset='UTF-8')
+		meta(http-equiv='X-UA-Compatible', content='IE=edge')
+		script(src='https://www.paypalobjects.com/api/checkout.js')
+		title Shopping_Cart
+		link(rel='stylesheet', type='text/css', href='main.css')
+		link(href='https://fonts.googleapis.com/css?family=Fira+Sans+Extra+Condensed', rel='stylesheet')
+		link(href='https://fonts.googleapis.com/css?family=Source+Sans+Pro', rel='stylesheet')
+		link(href='https://fonts.googleapis.com/css?family=Gentium+Basic', rel='stylesheet')
+	body
+		.container6
+			br
+			img.logo(src='img/pacman.jpg')
+			h1 Shopping Cart
+			.navigation
+				ul
+					li
+						a(href='/') home
+					li
+						a(href='/look4Games') Pacdude Games
+					li
+						a(href='/listOfGames') List Of Games 4 U!
+					li
+						a(href='/merchandise') Merchandise
+			center
+				.row1
+					// card 1
+					.card2
+						.imgbox9
+						.divider
+							h4 These products are in your shopping cart!
+							p
+							if products
+								each item in products
+									| #{item.item.name} X #{item.qty}, price: #{item.price}
+									br
+								.divider
+								.totalprice
+									.price
+										p Total price: €#{totalPrice}
+									.btw
+										p Prices incl. btw
+							else
+								| No products here yet!
+							#paypal-button-container
+								a(href='shopping_cart.html') Buy Now
+		footer
+			#footer
+				#socialicons
+					ul
+						h4 SOCIAL
+						li
+							a(href="//" +"www.facebook.com")
+								img(src='img/social/facebook.png')
+						li
+							a(href="//" +"www.instagram.com")
+								img(src='img/social/instagram.png')
+						li
+							a(href="//" +"www.twitter.com")
+								img(src='img/social/twitter.png')
+						li
+							a(href="//" +"www.youtube.com")
+								img(src='img/social/youtube.png')
+				#divider
+				#copyrights © 2017 Pacdude, Inc. All Rights Reserved
+		script.
+			paypal.Button.render({
+			env: 'sandbox', // sandbox | production
+			// PayPal Client IDs - replace with your own
+			// Create a PayPal app: https://developer.paypal.com/developer/applications/create
+			client: {
+			sandbox:    'Afk9_B9Pk1VrH-AM4gxO5KpKB4j2wLjxgmPKGTCJ9kRv0D6HByeVeXhoB2aVidxR9y1Sys_PCb25FZid',
+			production: '<insert production client id>'
+			},
+			// Show the buyer a 'Pay Now' button in the checkout flow
+			commit: true,
+			// payment() is called when the button is clicked
+			payment: function(data, actions) {
+			// Make a call to the REST api to create the payment
+			return actions.payment.create({
+			payment: {
+			transactions: [
+			{
+			amount: { total: '10.00', currency: 'EUR' }
+			}
+			]
+			}
+			});
+			},
+			// onAuthorize() is called when the buyer approves the payment
+			onAuthorize: function(data, actions) {
+			// Make a call to the REST api to execute the payment
+			return actions.payment.execute().then(function() {
+			//- window.alert('Payment Complete!');
+			window.location.replace("/purch");
+			});
+			}
+			}, '#paypal-button-container');

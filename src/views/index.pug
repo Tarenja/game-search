@@ -86,23 +86,3 @@ html
 								img(src='img/social/youtube.png')
 			#divider
 			#copyrights ©2017 Pacdude, Inc. All Rights Reserved
-			script.
-				$(document).mousemove(function() {
-				$("#header_button").animate({
-				opacity: '1'
-				});
-				});
-				var modal = document.getElementById('myModal');
-				var btn = document.getElementById("bookNow");
-				var span = document.getElementsByClassName("close")[0];
-				btn.onclick = function() {
-				modal.style.display = "block";
-				}
-				span.onclick = function() {
-				modal.style.display = "none";
-				}
-				window.onclick = function(event) {
-				if (event.target == modal) {
-				modal.style.display = "none";
-				}
-				}

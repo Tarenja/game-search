@@ -10,20 +10,20 @@ html
     link(href='https://fonts.googleapis.com/css?family=Source+Sans+Pro', rel='stylesheet')
     link(href='https://fonts.googleapis.com/css?family=Gentium+Basic', rel='stylesheet')
   body
-    .container4
+    .container6
       br
       img.logo(src='img/pacman.jpg')
       h1 Shopping Cart
       .navigation
         ul
           li
-            a(href='index.html') home
+            a(href='/') home
           li
-            a(href='look4Games.html') Look 4 Games!
+            a(href='look4Games') Pacdude Games
           li
-            a(href='listOfGames.html') List Of Games 4 U!
+            a(href='listOfGames') List Of Games 4 U!
           li
-            a(href='merchandise.html') Merchandise
+            a(href='merchandise') Merchandise
       center
         .row1
           // card 1
@@ -46,21 +46,21 @@ html
       #footer
         #socialicons
           ul
-            br
-            br
-            br
-            br
             h4 SOCIAL
             li
-              img(src='img/social/facebook.png')
+              a(href="//" +"www.facebook.com")
+                img(src='img/social/facebook.png')
             li
-              img(src='img/social/instagram.png')
+              a(href="//" +"www.instagram.com")
+                img(src='img/social/instagram.png')
             li
-              img(src='img/social/twitter.png')
+              a(href="//" +"www.twitter.com")
+                img(src='img/social/twitter.png')
             li
-              img(src='img/social/youtube.png')
+              a(href="//" +"www.youtube.com")
+                img(src='img/social/youtube.png')
         #divider
-        #copyrights © 2017 AXEL, Inc. All Rights Reserved
+        #copyrights © 2017 Pacdude, Inc. All Rights Reserved
     script.
       paypal.Button.render({
       env: 'sandbox', // sandbox | production
@@ -89,7 +89,8 @@ html
       onAuthorize: function(data, actions) {
       // Make a call to the REST api to execute the payment
       return actions.payment.execute().then(function() {
-      window.alert('Payment Complete!');
+      //- window.alert('Payment Complete!');
+      window.location.replace("/purch");
       });
       }
       }, '#paypal-button-container');

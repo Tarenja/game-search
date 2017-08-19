@@ -38,10 +38,11 @@ html
 							p
 							if products
 								each item in products
-									- var url = '/reduce/' + item.item.id
+									- const url = '/reduce/' + item.item.id
+									- const url1 = '/remove/' + item.item.id
 									| #{item.item.name} X #{item.qty}, price: #{item.price} - 
 									a(href=url style={color: 'black'}) Remove One
-									a(href=url style={color: 'black'})  Remove All
+									a(href=url1 style={color: 'black'})  Remove All
 									br
 								.totalprice
 									.price

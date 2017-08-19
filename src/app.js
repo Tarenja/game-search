@@ -240,7 +240,7 @@ app.get('/purch', (req, res) => {
   if (user === undefined) {
     res.redirect('/?message=' + encodeURIComponent("Please log in"));
   } else {
-    req.session.cart.destroy;
+    req.session.cart = null;
     res.render('purchasecomplete')
   }
 });

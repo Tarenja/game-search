@@ -21,9 +21,9 @@ html
 					li
 						a(href='/look4Games') Pacdude Games
 					li
-						a(href='/listOfGames') List Of Games 4 U!
-					li
 						a(href='/merchandise') Merchandise
+					li
+						a(href='/profile') Profile
 			center
 				.row1
 					// card 1
@@ -37,7 +37,7 @@ html
 									- var url = '/reduce/' + item.item.id
 									| #{item.item.name} X #{item.qty}, price: #{item.price} - 
 									a(href=url style={color: 'black'}) Remove One
-									a(href=url style={color: 'black'}) Remove All
+									a(href=url style={color: 'black'})  Remove All
 									br
 								.totalprice
 									.price
@@ -52,7 +52,7 @@ html
 			#footer
 				#socialicons
 					ul
-						h4 SOCIAL
+						h4 Follow us!
 						li
 							a(href="//" +"www.facebook.com")
 								img(src='img/social/facebook.png')

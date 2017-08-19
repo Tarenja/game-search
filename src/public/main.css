@@ -3,6 +3,7 @@ h1
     text-align: center; 
     color: white;
     text-transform: uppercase;
+    font-family: 'Source Sans Pro', sans-serif;
     }
 
 h2  
@@ -119,6 +120,7 @@ li  {
     width: 4%;
 }
 
+
 #socialicons li {
     margin-top: 0px;
     display: inline;
@@ -191,7 +193,7 @@ input[type=text] {
     background-color: rgba(225, 225, 255, 0.5);
     height: 0.5px;
     border-bottom: 1px solid;
-    width: 94%;
+    width: 100%;
 }
 
 /* MERCHANDISE PAGE */
@@ -204,15 +206,15 @@ h4 {
 .container {
     background: url(img/cart_background.jpg);
     /*background-color: black;*/ /*rgb(999, 9990, 240);*/
-    padding: 20px;
-    width: 100%;
+    padding: 0px;
+    /*width: 100%;*/
 
     height: 100%;
     /*float: left;*/
     /*display: block;*/
     /*background-repeat: no-repeat;*/
     background-size: cover;
-    height: 800px;
+ /*   height: 800px;*/
     width: 100%;
     /*background-position: right top;*/
 
@@ -337,46 +339,46 @@ h4 {
 
 
 .card .imgbox1 {
-    height: 160px;
+    height: 250px;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
-    background-image: url("img/merch/pacglasses.jpg");
+    background-image: url("img/pacmannes.jpg");
     background-repeat: no-repeat;
     background-position: center;
-    height: 150px;
+    height: 250px;
     width: 100%;
 }
 
 .card .imgbox2 {
-    height: 160px;
+     height: 250px;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
-    background-image: url("img/merch/pacman.jpg");
+    background-image: url("img/mspacman.png");
     background-repeat: no-repeat;
     background-position: center;
-    height: 150px;
+    height: 250px;
     width: 100%;
 }
 
 .card .imgbox3 {
-    height: 160px;
+    height: 250px;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
-    background-image: url("img/merch/pacshirt.jpg");
+    background-image: url("img/flashman_300x200.jpg");
     background-repeat: no-repeat;
     background-position: center;
-    height: 150px;
+    height: 250px;
     width: 100%;
 }
 
 .card .imgbox4 {
-    height: 160px;
+  height: 250px;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
-    background-image: url("img/merch/paccup.jpg");
+    background-image: url("img/tapman300.jpg");
     background-repeat: no-repeat;
     background-position: center;
-    height: 150px;
+    height: 250px;
     width: 100%;
 }
 
@@ -576,4 +578,8 @@ footer {
     font-size: 16px;
     color: #dddddd;
     padding-top: 10px;
+}
+
+#footer img:hover {
+    filter: blur(1px);
 }

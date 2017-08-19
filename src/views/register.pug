@@ -1,21 +1,21 @@
 doctype html
 html
 	head
-		title New Member
+		title Register
 		link(rel='stylesheet', type='text/css', href='main.css')
+		link(href='https://fonts.googleapis.com/css?family=Press+Start+2P|Shojumaru|Slackey&amp;subset=cyrillic,cyrillic-ext,greek,latin-ext' rel='stylesheet')
 		link(href='https://fonts.googleapis.com/css?family=Source+Sans+Pro', rel='stylesheet')
 		script(src='https://code.jquery.com/jquery-1.10.2.js')
 	body
 		.container1
 			br
 			img.logo(src='img/pacman.jpg')
-			h1 Games 4 U
+			h1 Register
 			.navigation
 				// <img class="logo" src="img/pacman.jpg">
 				ul
 					li
-						a(href='index.html') Home
-			br
+						a(href='/') Home
 			br
 			h2 Sign Up Here
 			.form
@@ -34,26 +34,6 @@ html
 					input#password(type='text', name='password2', placeholder='Please repeat your password...', required)
 					input(type='submit', value='Submit')
 					button#button submit
-			br
-			br
-			br
-			br
-			br
-			br
-			br
-			br
-			br
-			br
-			br
-			br
-			br
-			br
-			br
-			br
-			br
-			br
-			br
-			br
 			br
 			br
 			br
@@ -100,7 +80,7 @@ html
 								img(src='img/social/twitter.png')
 							li
 								img(src='img/social/youtube.png')
-					#copyrights © 2017 Games4all, Inc. All Rights Reserved
+					#copyrights © 2017 PACDUDE, Inc. All Rights Reserved
 			script.
 				$(document).mousemove(function() {
 				$("#header_button").animate({

@@ -1,8 +1,9 @@
 doctype html
 html
   head
-    title Look4Games
+    title Games
     link(rel='stylesheet', type='text/css', href='main.css')
+    link(href='https://fonts.googleapis.com/css?family=Press+Start+2P|Shojumaru|Slackey&amp;subset=cyrillic,cyrillic-ext,greek,latin-ext' rel='stylesheet')
     link(href='https://fonts.googleapis.com/css?family=Fira+Sans+Extra+Condensed', rel='stylesheet')
     link(href='https://fonts.googleapis.com/css?family=Source+Sans+Pro', rel='stylesheet')
     link(href='https://fonts.googleapis.com/css?family=Gentium+Basic', rel='stylesheet')
@@ -10,18 +11,22 @@ html
     .container
       br
       img.logo(src='img/pacman.jpg')
-      h1 Look 4 Games
+      h1 Games
       .navigation
         ul
           li
-            a(href='index.html') home
+            a(href='/') Home
           li
-            a(href='look4Games.html') Look 4 Games!
+            a(href='#') Games
           li
-            a(href='listOfGames.html') List Of Games 4 U!
+            a(href='/merchandise') Merchandise
           li
-            a(href='merchandise.html') Merchandise
-      .row1
+            a(href='/profile') Profile
+          li
+            a(href='/shopcart') Shopping Cart
+          li
+            a(href='/logout') Log Out
+        .row1
         // card 1
         .card
           .imgbox1
@@ -35,7 +40,8 @@ html
               p €900,00
             .btw
               p Prices incl. btw
-          .buy-button Buy Now
+          .buy-button
+            a(href='/shopcart') Buy Now
         // card 2
         .card
           .imgbox2
@@ -49,7 +55,8 @@ html
               p €23,50
             .btw
               p Prices incl. btw
-          .buy-button Buy Now
+          .buy-button
+            a(href='/shopcart') Buy Now
         // card 3
         .card
           .imgbox3
@@ -63,7 +70,8 @@ html
               p €150,00
             .btw
               p Prices incl. btw
-          .buy-button Buy Now
+          .buy-button
+            a(href='/shopcart') Buy Now
         // card 4
         .card
           .imgbox4
@@ -77,7 +85,8 @@ html
               p €23,50
             .btw
               p Prices incl. btw
-          .buy-button Buy Now
+          .buy-button
+            a(href='/shopcart') Buy Now
       footer
         #footer
           #footermenu
@@ -103,4 +112,4 @@ html
               li
                 img(src='img/social/youtube.png')
           #divider
-          #copyrights ©2017 Games 4 U, Inc. All Rights Reserved
+          #copyrights ©2017 PACDUDE, Inc. All Rights Reserved

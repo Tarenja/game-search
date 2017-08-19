@@ -12,7 +12,8 @@ app.set('views', __dirname + '/views');
 app.set('view engine', 'pug');
 app.use(express.static(__dirname + '/public'));
 app.use(bodyParser.urlencoded({ extended: true }));
-const sequelize = new Sequelize('groupshop', process.env.POSTGRES_USER, process.env.POSTGRES_PASSWORD, {
+const sequelize = new Sequelize('groupshop','postgres', 'postgres', {
+// const sequelize = new Sequelize('groupshop', process.env.POSTGRES_USER, process.env.POSTGRES_PASSWORD, {
   host: 'localhost',
   dialect: 'postgres',
   storage: './session.postgres'
@@ -122,16 +123,21 @@ app.get('/', (req,res) => {
   })
 });
 
-app.get('/look4games', (req,res) => {
-  res.render('look4games');
+app.get('/games', (req,res) => {
+  res.render('games');
 });
 
 app.get('/profile', (req,res) => {
-  res.render('profile2');
+  res.render('profile');
 });
 
 app.get('/merchandise', (req,res) => {
   res.render('merch');
+});
+
+// Axel tijdelijke route Shopchart aangemaakt om te kijken of alle linkjes werken
+app.get('/shopcart', (req,res) => {
+  res.render('shopcart');
 });
 
 app.get('/register', (req,res) => {
@@ -235,3 +241,5 @@ app.get('/add-to-cart/:id', (req,res) => {
 const server = app.listen(3000, () => {
   console.log('Example app listening on port: ' + server.address().port);
 })
+
+

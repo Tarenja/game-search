@@ -3,6 +3,8 @@ h1
     text-align: center; 
     color: white;
     text-transform: uppercase;
+    font-family: 'Press Start 2P', cursive;
+    /*font-family: 'Source Sans Pro', sans-serif;*/
     }
 
 h2  
@@ -44,20 +46,20 @@ li  {
 
 .container1 {
     background: url(img/pacman_monsters.jpg) center center;
-   	/*background-image: url("img/pacman_monsters.jpg");*/
-   	width: 100%;
-   	height: 100%;
+    /*background-image: url("img/pacman_monsters.jpg");*/
+    width: 100%;
+    height: 100%;
     /*float: left;*/
-   	/*display: block;*/
-   	/*background-repeat: no-repeat;*/
-   	background-size: cover;
-   	height: 800px;
-   	width: 100%;
-   	background-position: right top;
+    /*display: block;*/
+    /*background-repeat: no-repeat;*/
+    background-size: cover;
+    height: 800px;
+    width: 100%;
+    background-position: right top;
 }
 
 .container2 {
-	background: url(img/game_controler.jpg) center center;
+    background: url(img/game_controler.jpg) center center;
     /*background-image: url("img/pacman_monsters.jpg");*/
     width: 100%;
     height: 100%;
@@ -71,7 +73,7 @@ li  {
     }
 
 .container3 {
-	background: url(img/game_over.jpg) center center;
+    background: url(img/game_over.jpg) center center;
     /*background-image: url("img/pacman_monsters.jpg");*/
     width: 100%;
     height: 100%;
@@ -98,8 +100,57 @@ li  {
     background-position: right top;
     }
 
+.container5 {
+   /* background: url(img/purchcomplbg.jpg) center center;*/
+   background-color: #145C68;
+    /*background-image: url("img/pacman_monsters.jpg");*/
+    width: 100%;
+    height: 100%;
+    /*float: left;*/
+    /*display: block;*/
+    /*background-repeat: no-repeat;*/
+    background-size: cover;
+    height: 800px;
+    width: 100%;
+    background-position: right top;
+    }
+
+.container6 {
+    background: url(img/pacmanbg.png);
+    /*background-color: black;*/ /*rgb(999, 9990, 240);*/
+    padding: 0px;
+    /*width: 100%;*/
+
+    height: 100%;
+    /*float: left;*/
+    /*display: block;*/
+    /*background-repeat: no-repeat;*/
+    background-size: cover;
+ /*   height: 800px;*/
+    width: 100%;
+    /*background-position: right top;*/
+
+}
+
+.container7 {
+    background: url(img/paceatbg.jpg);
+    /*background-color: black;*/ /*rgb(999, 9990, 240);*/
+    padding: 0px;
+    /*width: 100%;*/
+
+    height: 100%;
+    /*float: left;*/
+    /*display: block;*/
+    /*background-repeat: no-repeat;*/
+    background-size: cover;
+ /*   height: 800px;*/
+    width: 100%;
+    /*background-position: right top;*/
+
+}
+
 .about-section {
-    	color:green;
+        color:green;
     }
 
 #copyrights {
@@ -118,6 +169,7 @@ li  {
     margin: 5px;
     width: 4%;
 }
+
 
 #socialicons li {
     margin-top: 0px;
@@ -191,7 +243,7 @@ input[type=text] {
     background-color: rgba(225, 225, 255, 0.5);
     height: 0.5px;
     border-bottom: 1px solid;
-    width: 94%;
+    width: 100%;
 }
 
 /* MERCHANDISE PAGE */
@@ -204,15 +256,15 @@ h4 {
 .container {
     background: url(img/cart_background.jpg);
     /*background-color: black;*/ /*rgb(999, 9990, 240);*/
-    padding: 20px;
-    width: 100%;
+    padding: 0px;
+    /*width: 100%;*/
 
     height: 100%;
     /*float: left;*/
     /*display: block;*/
     /*background-repeat: no-repeat;*/
     background-size: cover;
-    height: 800px;
+ /*   height: 800px;*/
     width: 100%;
     /*background-position: right top;*/
 
@@ -235,6 +287,42 @@ h4 {
     margin: auto auto 50px auto;
 }
 
+.card3 .imgbox5 {
+    height: 350px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    background-image: url("img/thxpurch.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 100%;
+}
+
+.card3 {
+    background-color: #ffffff;
+    border-radius: 10px;
+    border-color: #e7e7e7, 1px, solid;
+    width: 50%;
+    margin: auto;
+    height: 40%;
+    display: inline-block;
+    border: 1px solid #e7e7e7;
+    font-family: 'Source Sans Pro', sans-serif;
+    margin-top: 3%;
+}
+
+.card3 button {
+    display: block;
+    border-radius: 5px;
+    float: center;
+    background-color: #f4ce42;
+    height: 40px;
+    padding: 10px 16px;
+}
+
+.card3 a {
+    color: black;
+}
+
 .card {
     background-color: #ffffff;
     border-radius: 10px;
@@ -250,8 +338,8 @@ h4 {
     background-color: #ffffff;
     border-radius: 10px;
     border-color: #e7e7e7, 1px, solid;
-    width: 50%;
-    margin: auto;
+    width: 35%;
+    margin-left: 6%;
     height: 500px;
     display: inline-block;
     border: 1px solid #e7e7e7;
@@ -337,46 +425,46 @@ h4 {
 
 
 .card .imgbox1 {
-    height: 160px;
+    height: 250px;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
-    background-image: url("img/merch/pacglasses.jpg");
+    background-image: url("img/pacman2.png");
     background-repeat: no-repeat;
     background-position: center;
-    height: 150px;
+    height: 250px;
     width: 100%;
 }
 
 .card .imgbox2 {
-    height: 160px;
+     height: 250px;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
-    background-image: url("img/merch/pacman.jpg");
+    background-image: url("img/misspacman.jpg");
     background-repeat: no-repeat;
     background-position: center;
-    height: 150px;
+    height: 250px;
     width: 100%;
 }
 
 .card .imgbox3 {
-    height: 160px;
+    height: 250px;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
-    background-image: url("img/merch/pacshirt.jpg");
+    background-image: url("img/flashman_300x200.jpg");
     background-repeat: no-repeat;
     background-position: center;
-    height: 150px;
+    height: 250px;
     width: 100%;
 }
 
 .card .imgbox4 {
-    height: 160px;
+  height: 250px;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
-    background-image: url("img/merch/paccup.jpg");
+    background-image: url("img/tapman300.jpg");
     background-repeat: no-repeat;
     background-position: center;
-    height: 150px;
+    height: 250px;
     width: 100%;
 }
 
@@ -535,7 +623,6 @@ h4 {
     text-align: center;
 }
 
-
 footer {
     float: right;
     display: block;
@@ -576,4 +663,8 @@ footer {
     font-size: 16px;
     color: #dddddd;
     padding-top: 10px;
+}
+
+#footer img:hover {
+    filter: blur(1px);
 }

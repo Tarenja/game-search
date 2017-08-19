@@ -1,9 +1,10 @@
 doctype html
 html
   head
-    title Look4Games
+    title Merchendise
     meta(charset='UTF-8')
     link(rel='stylesheet', type='text/css', href='main.css')
+    link(href='https://fonts.googleapis.com/css?family=Press+Start+2P|Shojumaru|Slackey&amp;subset=cyrillic,cyrillic-ext,greek,latin-ext' rel='stylesheet')
     link(href='https://fonts.googleapis.com/css?family=Fira+Sans+Extra+Condensed', rel='stylesheet')
     link(href='https://fonts.googleapis.com/css?family=Source+Sans+Pro', rel='stylesheet')
     link(href='https://fonts.googleapis.com/css?family=Gentium+Basic', rel='stylesheet')
@@ -15,13 +16,17 @@ html
       .navigation
         ul
           li
-            a(href='index.html') home
+            a(href='/') Home
           li
-            a(href='look4Games.html') Look 4 Games!
+            a(href='/games') Games
           li
-            a(href='listOfGames.html') List Of Games 4 U!
+            a(href='#') Merchandise
           li
-            a(href='merchandise.html') Merchandise
+            a(href='/profile') Profile
+          li
+            a(href='/shopcart') Shopping Cart
+          li
+            a(href='/logout') Log Out
       .row1
         // card 1
         .card
@@ -37,7 +42,7 @@ html
             .btw
               p Prices incl. btw
           .buy-button
-            a(href='shopping_cart.html') Buy Now
+            a(href='/shopcart') Buy Now
         // card 2
         .card
           .imgbox10
@@ -52,7 +57,7 @@ html
             .btw
               p Prices incl. btw
           .buy-button
-            a(href='shopping_cart.html') Buy Now
+            a(href='/shopcart') Buy Now
         // card 3
         .card
           .imgbox11
@@ -67,7 +72,7 @@ html
             .btw
               p Prices incl. btw
           .buy-button
-            a(href='shopping_cart.html') Buy Now
+            a(href='/shopcart') Buy Now
         // card 4
         .card
           .imgbox12
@@ -82,7 +87,7 @@ html
             .btw
               p Prices incl. btw
           .buy-button
-            a(href='shopping_cart.html') Buy Now
+            a(href='/shopcart') Buy Now
     footer
       #footer
         //
@@ -104,4 +109,4 @@ html
             li
               img(src='img/social/youtube.png')
         #divider
-        #copyrights ©2017 Games 4 U, Inc. All Rights Reserved
+        #copyrights ©2017 PACDUDE, Inc. All Rights Reserved

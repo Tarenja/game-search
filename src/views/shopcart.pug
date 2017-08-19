@@ -4,8 +4,9 @@ html
     meta(charset='UTF-8')
     meta(http-equiv='X-UA-Compatible', content='IE=edge')
     script(src='https://www.paypalobjects.com/api/checkout.js')
-    title Shopping_Cart
+    title Shop Cart
     link(rel='stylesheet', type='text/css', href='main.css')
+    link(href='https://fonts.googleapis.com/css?family=Press+Start+2P|Shojumaru|Slackey&amp;subset=cyrillic,cyrillic-ext,greek,latin-ext' rel='stylesheet')
     link(href='https://fonts.googleapis.com/css?family=Fira+Sans+Extra+Condensed', rel='stylesheet')
     link(href='https://fonts.googleapis.com/css?family=Source+Sans+Pro', rel='stylesheet')
     link(href='https://fonts.googleapis.com/css?family=Gentium+Basic', rel='stylesheet')
@@ -13,17 +14,21 @@ html
     .container4
       br
       img.logo(src='img/pacman.jpg')
-      h1 Shopping Cart
+      h1 Shop Cart
       .navigation
         ul
           li
-            a(href='index.html') home
+            a(href='/') Home
           li
-            a(href='look4Games.html') Look 4 Games!
+            a(href='/games') Games
           li
-            a(href='listOfGames.html') List Of Games 4 U!
+            a(href='/merchandise') Merchandise
           li
-            a(href='merchandise.html') Merchandise
+            a(href='/profile') Profile
+          li
+            a(href='#') Shopping Cart
+          li
+            a(href='/logout') Log Out  
       center
         .row1
           // card 1
@@ -41,7 +46,7 @@ html
                 .btw
                   p Prices incl. btw
               #paypal-button-container
-                a(href='shopping_cart.html') Buy Now
+                a(href='/shopcart') Buy Now
     footer
       #footer
         #socialicons
@@ -60,7 +65,7 @@ html
             li
               img(src='img/social/youtube.png')
         #divider
-        #copyrights © 2017 AXEL, Inc. All Rights Reserved
+        #copyrights © 2017 PACDUDE, Inc. All Rights Reserved
     script.
       paypal.Button.render({
       env: 'sandbox', // sandbox | production

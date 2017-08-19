@@ -3,6 +3,7 @@ html
 	head
 		title PACDUDE
 		link(rel='stylesheet', type='text/css', href='main.css')
+		link(href='https://fonts.googleapis.com/css?family=Press+Start+2P|Shojumaru|Slackey&amp;subset=cyrillic,cyrillic-ext,greek,latin-ext' rel='stylesheet')
 		link(href='https://fonts.googleapis.com/css?family=Source+Sans+Pro', rel='stylesheet')
 		script(src='https://code.jquery.com/jquery-1.10.2.js')
 	body
@@ -15,11 +16,15 @@ html
 					li
 						a(href='#') Home
 					li
-						a(href='/look4Games') Look 4 Games!
+						a(href='/games') Games
+					li
+						a(href='/merchandise') Merchandise
 					li
 						a(href='/profile') Profile
 					li
-						a(href='/merchandise') Merchandise
+						a(href='/shopcart') Shopping Cart
+					li
+						a(href='/logout') Log Out
 			.example
 			br
 			h2 Members Sign In
@@ -29,7 +34,6 @@ html
 					input#username(type='text', name='username', placeholder='please enter your username...', required)
 					label(for='password') Password
 					input#password(type='text', name='password', placeholder='Password...', required)
-					input(type='submit', value='Submit')
 					button#button Find Games!
 			//
 				<br/>
@@ -48,9 +52,28 @@ html
 				<br/>
 				<br/>
 				<br/>
-				<br/>
+				<br/>				
 			a(href='/register')
 				h3 New Member? Sign Up Here!
+			br
+			br
+			br
+			br
+			br
+			br
+			br
+			br
+			br
+			br
+			br
+			br
+			br
+			br
+			br
+			br
+			br
+			br
+			br
 			br
 			br
 			br
@@ -76,7 +99,7 @@ html
 								img(src='img/social/twitter.png')
 							li
 								img(src='img/social/youtube.png')
-					#copyrights © 2017 Games4all, Inc. All Rights Reserved
+					#copyrights © 2017 PACDUDE, Inc. All Rights Reserved
 			script.
 				$(document).mousemove(function() {
 				$("#header_button").animate({

@@ -12,6 +12,7 @@ h2
     color: white;
     text-transform: uppercase;
     padding-left: 120px;
+    font-family: 'Source Sans Pro', sans-serif;
     }
 
 h3  
@@ -183,13 +184,24 @@ li  {
     display: inline-block;
 }
 
+#field {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: none;
+/*    background-color: white;*/
+    color: white;
+    font-weight: bold;
+}
+
 label[for=username] {
     width: 100%;
     padding: 12px 20px;
     margin: 8px 0;
     box-sizing: border-box;
     border: none;
-    /*background-color: white;*/
+/*    background-color: white;*/
     color: white;
     font-weight: bold;
 }
@@ -200,31 +212,31 @@ label[for=password] {
     margin: 8px 0;
     box-sizing: border-box;
     border: none;
-    /*background-color: white;*/
+ /*   background-color: white;*/
     color: white;
     font-weight: bold;
 }
 
-label[for=repeat_password] {
+/*label[for=repeat_password] {
     width: 100%;
     padding: 12px 20px;
     margin: 8px 0;
     box-sizing: border-box;
     border: none;
-    /*background-color: white;*/
-    color: white;
+    /*background-color: white;
+   /* color: white;
     font-weight: bold;
 }
 
-input[type=text] {
+/*input[type=text] {
     /*width: 25%;*/
     /*padding: 12px 20px;*/
-    margin: 8px 0;
+   /* margin: 8px 0;
     box-sizing: border-box;
     border: none;
     background-color: white; 
-    display 
-}
+    display */
+/*}*/
 
 .logo {
     float: left;
@@ -667,4 +679,27 @@ footer {
 
 #footer img:hover {
     filter: blur(1px);
+}
+
+.form {
+  /*  background-color: #ffffff;*/
+    width: 35%;
+    margin-left: 6%;
+    height: 10%;
+    display: inline-block;
+    color: black;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+.form button {
+    margin-left: 165px;
+}
+
+.form input {
+    margin-right: 200px;
+    float: right;
+}
+
+.ellende {
+    margin-top: 11%;
 }

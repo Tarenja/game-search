@@ -3,10 +3,11 @@ html
 	head
 		title PACDUDE
 		link(rel='stylesheet', type='text/css', href='main.css')
+		link(href='https://fonts.googleapis.com/css?family=Press+Start+2P|Shojumaru|Slackey&amp;subset=cyrillic,cyrillic-ext,greek,latin-ext' rel='stylesheet')
 		link(href='https://fonts.googleapis.com/css?family=Source+Sans+Pro', rel='stylesheet')
 		script(src='https://code.jquery.com/jquery-1.10.2.js')
 	body
-		.container1
+		.container6
 			br
 			img.logo(src='img/pacman.jpg')
 			h1 PACDUDE
@@ -15,72 +16,76 @@ html
 					li
 						a(href='#') Home
 					li
-						a(href='/look4Games') Look 4 Games!
+						a(href='/games') Games
+					li
+						a(href='/merchandise') Merchandise
 					li
 						a(href='/profile') Profile
 					li
-						a(href='/merchandise') Merchandise
+						a(href='/shopcart') Shopping Cart
+					li
+						a(href='/logout') Log Out
 			.example
-			br
 			if user
-				h2 Welcome #{user.username}! Thanks for being Awesome!
+				.ellende
+					h2 Welcome #{user.username}! Thanks for being Awesome!
 			else
+				br
 				h2 Members Sign In
 				.form
 					form(action='/login' method='post')
-						label(for='username' name='username') Username
-						input#username(type='text', name='username', placeholder='please enter your username...', required)
+						label(for='username') Username
+						input#username(type='text', name='username', placeholder='Username...', required)
+						br
 						label(for='password') Password
-						input#password(type='password', name='password', placeholder='Password...', required)
-						input(type='submit', value='Submit')
-			
-			h2#error-message= message
-			//
-				<br/>
-				<br/>
-				<br/>
-				<br/>
-				<br/>
-				<br/>
-				<br/>
-				<br/>
-				<br/>
-				<br/>
-				<br/>
-				<br/>
-				<br/>
-				<br/>
-				<br/>
-				<br/>
-				<br/>
-			a(href='/register')
-				h3 New Member? Sign Up Here!
+						input#password(type='text', name='password', placeholder='Password...', required)
+						br
+						button#button Log in
+						
+				a(href='/register')
+					h3 New Member? Sign Up Here!
 			br
 			br
 			br
 			br
-			footer
-				#footer
-					#footermenu
-						ul
-							li Get help
-							li Advertisement
-							li Contact
-							li News
-							li About GAMES 4 U
-					br
-					#socialicons
-						ul
-							h4 SOCIAL
-							li
+			br
+			br
+			br
+			br
+			br
+			br
+			br
+			br
+			br
+			br
+			br
+			br
+			br
+			br
+			br
+			br
+			br
+			br
+			br
+		footer
+			#footer
+				#socialicons
+					ul
+						h4 Follow us!
+						li
+							a(href="//" +"www.facebook.com")
 								img(src='img/social/facebook.png')
-							li
+						li
+							a(href="//" +"www.instagram.com")
 								img(src='img/social/instagram.png')
-							li
+						li
+							a(href="//" +"www.twitter.com")
 								img(src='img/social/twitter.png')
-							li
+						li
+							a(href="//" +"www.youtube.com")
 								img(src='img/social/youtube.png')
-					#copyrights © 2017 Games4all, Inc. All Rights Reserved
+			#divider
+			#copyrights ©2017 Pacdude, Inc. All Rights Reserved
 			script.
 				$(document).mousemove(function() {
 				$("#header_button").animate({

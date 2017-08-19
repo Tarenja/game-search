@@ -1,106 +1,88 @@
 doctype html
 html
 	head
-		title New Member
+		title Register
 		link(rel='stylesheet', type='text/css', href='main.css')
+		link(href='https://fonts.googleapis.com/css?family=Press+Start+2P|Shojumaru|Slackey&amp;subset=cyrillic,cyrillic-ext,greek,latin-ext' rel='stylesheet')
 		link(href='https://fonts.googleapis.com/css?family=Source+Sans+Pro', rel='stylesheet')
 		script(src='https://code.jquery.com/jquery-1.10.2.js')
 	body
-		.container1
+		.container6
 			br
 			img.logo(src='img/pacman.jpg')
-			h1 Games 4 U
+			h1 Register
 			.navigation
 				// <img class="logo" src="img/pacman.jpg">
 				ul
 					li
 						a(href='/') Home
 			br
-			br
 			h2 Sign Up Here
 			.form
-				form(action='/register' method='post')
-					label(for='firstname') First Name
-					input#firstname(type='text', name='firstname', placeholder='Enter your first...', required)
-					label(for='lastname') Last Name
-					input#lastname(type='text', name='lastname', placeholder='Please enter your last name...', required)
-					label(for='username') Username
-					input#username(type='text', name='username', placeholder='Please enter your username...', required)
-					label(for='email') Email
-					input#email(type='text', name='email', placeholder='Please enter you email...', required)
-					label(for='password') Password  
-					input#password(type='text', name='password', placeholder='Please enter your password...', required)
-					label(for='password2') Confirm Password
-					input#password(type='text', name='password2', placeholder='Please repeat your password...', required)
-					input.btn(type='submit', value='Submit')
-			br
-			br
-			br
-			br
-			br
-			br
-			br
-			br
-			br
-			br
-			br
-			br
-			br
-			br
-			br
-			br
-			br
-			br
-			br
-			br
-			br
-			br
-			br
-			br
-			br
-			br
-			br
-			br
-			br
-			br
-			br
-			br
-			br
-			br
-			br
-			br
-			br
-			br
-			br
-			br
-			br
-			br
-			br
-			br
-			br
-			footer
-				#footer
-					#footermenu
-						ul
-							li Get help
-							li Advertisement
-							li Contact
-							li News
-							li About GAMES 4 U
+				form(action='/register')
+					label#field(for='firstname') First Name
+					input#firstname(type='text', name='firstname', placeholder='First Name...', required)
 					br
-					#socialicons
-						ul
-							h4 SOCIAL
+					label#field(for='lastname') Last Name
+					input#lastname(type='text', name='lastname', placeholder='Last Name...', required)
+					br
+					label#field(for='username') Username
+					input#username(type='text', name='username', placeholder='Username...', required)
+					br
+					label#field(for='email') Email
+					input#email(type='text', name='password', placeholder='E-mail...', required)
+					br
+					label#field(#fieldfor='password') Password  
+					input#password(type='text', name='password', placeholder='Password...', required)
+					br
+					label#field(for='confirm_password') Confirm Password
+					input#password(type='text', name='password2', placeholder='Please repeat password...', required)
+					input(type='submit', value='Submit')
+			br
+			br
+			br
+			br
+			br
+			br
+			br
+			br
+			br
+			br
+			br
+			br
+			br
+			br
+			br
+			br
+			br
+			br
+			br
+			br
+			br
+			br
+			br
+			br
+			br
+		footer
+			#footer
+				#socialicons
+					ul
+							h4 Follow us!
 							li
-								img(src='img/social/facebook.png')
+								a(href="//" +"www.facebook.com")
+									img(src='img/social/facebook.png')
 							li
-								img(src='img/social/instagram.png')
+								a(href="//" +"www.instagram.com")
+									img(src='img/social/instagram.png')
 							li
-								img(src='img/social/twitter.png')
+								a(href="//" +"www.twitter.com")
+									img(src='img/social/twitter.png')
 							li
-								img(src='img/social/youtube.png')
-					#copyrights © 2017 Games4all, Inc. All Rights Reserved
-			//script.
+								a(href="//" +"www.youtube.com")
+									img(src='img/social/youtube.png')
+				#divider
+				#copyrights © 2017 Pacdude, Inc. All Rights Reserved
+			script.
 				$(document).mousemove(function() {
 				$("#header_button").animate({
 				opacity: '1'

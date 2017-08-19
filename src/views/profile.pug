@@ -1,6 +1,68 @@
 doctype html
 html
 	head
+		title Welcome
+		link(rel='stylesheet', type='text/css', href='main.css')
+		link(href='https://fonts.googleapis.com/css?family=Press+Start+2P|Shojumaru|Slackey&amp;subset=cyrillic,cyrillic-ext,greek,latin-ext' rel='stylesheet')
+		link(href='https://fonts.googleapis.com/css?family=Fira+Sans+Extra+Condensed', rel='stylesheet')
+		link(href='https://fonts.googleapis.com/css?family=Source+Sans+Pro', rel='stylesheet')
+		link(href='https://fonts.googleapis.com/css?family=Gentium+Basic', rel='stylesheet')
 	body
-		if user
-			h1 Welcome to your profile!
+		.container6
+			br
+			img.logo(src='img/pacman.jpg')
+			if user
+				h1 Welcome to your profile!
+				.navigation
+					ul
+						li
+							a(href='/') Home
+						li
+							a(href='/games') Games
+						li
+							a(href='/merchandise') Merchandise
+						li
+							a(href='#') Profile
+						li
+							a(href='/shopcart') Shopping Cart
+						li
+							a(href='/logout') Log Out
+				h2 Welcome to your profile #{user.firstname}.
+
+			br
+			br
+			br
+			br
+			br
+			br
+			br
+			br
+			br
+			br
+			br
+			br
+			br
+			br
+			br
+			br
+			br
+			br
+		footer
+			#footer
+				#socialicons
+					ul
+							h4 Follow us!
+							li
+								a(href="//" +"www.facebook.com")
+									img(src='img/social/facebook.png')
+							li
+								a(href="//" +"www.instagram.com")
+									img(src='img/social/instagram.png')
+							li
+								a(href="//" +"www.twitter.com")
+									img(src='img/social/twitter.png')
+							li
+								a(href="//" +"www.youtube.com")
+									img(src='img/social/youtube.png')
+				#divider
+				#copyrights © 2017 Pacdude, Inc. All Rights Reserved
